@@ -25,7 +25,7 @@ public class BankRestController {
 	TransactionRepo trepo;
 	
 	@GetMapping("/login")
-	public boolean login(@RequestParam int cid, @RequestParam String pwd) {
+	public boolean login(@RequestParam int cid, @RequestBody String pwd) {
 		if(repo.existsById(cid))
 		{
 			Account a = repo.findById(cid).orElse(null);
